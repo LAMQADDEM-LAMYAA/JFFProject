@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Resultats du Calcul</title>
+    <style>
+        /* Ribbon styles */
+        .ribbon {
+            width: 100%;
+            height: 40px;
+            background-color: #20c997;
+            text-align: center;
+            line-height: 40px;
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+            position: relative;
+        }
+
+        .ribbon-content {
+            padding: 10px;
+        }
+
+        /* Grid container for alignment */
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 2px; /* Adjust this value to reduce spacing */
+        }
+
+        /* Alignment for left and right sections */
+        .align-left {
+            text-align: left;
+        }
+
+        .align-right {
+            text-align: right;
+        }
+
+        /* Table styles */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #5c615c;
+        }
+
+        tr:hover {
+            background-color: #20c997;
+        }
+
+        /* Download button styles */
+        .download-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+    footer {
+    background-color: #20c997;
+    color: #000; /* Text color for the footer in black */
+    text-align: center;
+    padding: 1rem;
+}
+    </style>
+</head>
+
+<body>
+    <div class="ribbon">
+        <div class="ribbon-content">Résultats du Calcul</div>
+    </div>
+
+<style>
+    .custom-center {
+        text-align: center;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #f0f0f0;
+        border-radius: 10px;
+        font-family: Arial, sans-serif;
+    }
+
+    .custom-center h2 {
+        color: #333;
+    }
+
+    .custom-center p {
+        margin-bottom: 10px;
+    }
+</style>
+
+<div class="custom-center">
+    <h2>Résultats Efficacité GTA :</h2>
+    <p>Puissance produite par l'alternateur : {{ '%.2f'|format(PAlt) }} MW</p>
+    <p>Puissance emmagasinée dans la vapeur fournie à la turbine pendant l'expansion : {{ '%.2f'|format(Pth) }} MW</p>
+    <p>Efficacité GTA : {{ '%.2f'|format(efficiency) }}%</p>
+</div>
+
+
+
+    <div class="ribbon">
+        <div class="ribbon-content">Tableau des résultats</div>
+    </div>
+
+    <table>
+        <tr>
+            <th>Température (°C)</th>
+            <th>Pression (bar)</th>
+            <th>Enthalpie (kJ/kg)</th>
+            <th>Entropie (kJ/kg·K)</th>
+            <th>Énergie libre de Gibbs (kJ/kg)</th>
+            <th>Densité (kg/m³)</th>
+            <th>Capacité thermique spécifique (kJ/kg·K)</th>
+            <th>Capacité thermique spécifique à volume constant (kJ/kg·K)</th>
+        </tr>
+        {% for row in properties_gta_efficiency_data %}
+        <tr>
+            <td>{{ '%.2f'|format(row['Temperature']) }}</td>
+            <td>{{ '%.2f'|format(row['Pressure']) }}</td>
+            <td>{{ '%.2f'|format(row['Enthalpy']) }}</td>
+            <td>{{ '%.2f'|format(row['Entropy']) }}</td>
+            <td>{{ '%.2f'|format(row['Gibbs Free Energy']) }}</td>
+            <td>{{ '%.2f'|format(row['Density']) }}</td>
+            <td>{{ '%.2f'|format(row['Specific Heat Capacity']) }}</td>
+            <td>{{ '%.2f'|format(row['Specific Heat Capacity at Constant Volume']) }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+    <footer>
+        <p style="color: black;">Copyright &#169; 2023 All rights reserved | This Website is made with Love by LAMQADDEM Lamyaa</p>
+    </footer>
+</body>
+</html>

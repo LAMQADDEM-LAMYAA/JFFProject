@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calcul des Bilans</title>
+
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.ribbon {
+    background-color: #20c997; /* Green color for the ribbon */
+    color: #fff; /* Text color for the ribbon */
+    text-align: center;
+    padding: 0.5rem;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+main {
+    padding: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #555;
+}
+
+footer {
+    background-color: #333;
+    color: #000; /* Text color for the footer in black */
+    text-align: center;
+    padding: 1rem;
+}
+    </style>
+</head>
+<meta charset="utf-8">
+
+<body>
+    <div class="ribbon">
+        <p>Bienvenue sur notre site</p>
+    </div>
+    <header>
+        <h1>Calcul du Bilan Massique et Energetique du Barillet BP :</h1>
+    </header>
+    <main>
+            <main>
+        <form method="post" action="/form">
+            <label>D&eacutebit massique  BP produite dans SAP (t/h):</label>
+            <input type="number" name="QSAP" step="0.01" required><br>
+
+            <label> D&eacutebit massique de soutirage  BP r&eacutegl&eacute (t/h):</label>
+            <input type="number" name="Qsoutirage" step="0.01" required><br>
+
+            <label>D&eacutebit massique vers PAP (t/h):</label>
+            <input type="number" name="QPAP" step="0.01" required><br>
+
+            <label>D&eacutebit massique  BP vers le poste sou-vide (t/h):</label>
+            <input type="number" name="QC" step="0.01" required><br>
+
+            <label>D&eacutebit massique vers  D&eacutegaseur (t/h):</label>
+            <input type="number" name="QD" step="0.01" required><br>
+
+            <label>D&eacutebit massique vers &eacutevent (t/h):</label>
+            <input type="number" name="QE" step="0.01" required><br>
+
+            <label>Temp&eacuterature BP produite dans SAP  (&deg;C):</label>
+            <input type="number" name="TSAP" step="0.01" required><br>
+
+            <label>Pressure BP produite dans SAP  (bar):</label>
+            <input type="number" name="PSAP" step="0.01" required><br>
+
+
+            <label>Temp&eacuterature de soutirage BP r&eacutegl&eacute (&deg;C):</label>
+            <input type="number" name="Tsoutirage" step="0.01" required><br>
+
+            <label>Pression de soutirage BP r&eacutegl&eacute (bar):</label>
+            <input type="number" name="Psoutirage" step="0.01" required><br>
+
+            <label>Temp&eacuterature BP vers PAP  (&deg;C):</label>
+            <input type="number" name="TPAP" step="0.01" required><br>
+
+            <label>Pression BP vers PAP (bar):</label>
+            <input type="number" name="PPAP" step="0.01" required><br>
+
+            <label>Temp&eacuterature BP vers le poste sou-vide  (&deg;C):</label>
+            <input type="number" name="TC" step="0.01" required><br>
+
+            <label>Pression BP vers le poste sou-vide (bar):</label>
+            <input type="number" name="PC" step="0.01" required><br>
+
+            <label>Temp&eacuterature BP vers D&eacutegaseur  (&deg;C):</label>
+            <input type="number" name="TD" step="0.01" required><br>
+
+            <label>Pression vers  D&eacutegaseur (bar):</label>
+            <input type="number" name="PD" step="0.01" required><br>
+
+            <label>Temp&eacuterature BP Vers &eacutevent  (&deg;C):</label>
+            <input type="number" name="TE" step="0.01" required><br>
+
+            <label>Pressure BP Vers &eacutevent (bar):</label>
+            <input type="number" name="PE" step="0.01" required><br>
+
+            <input type="submit" value="Calculate">
+        </form>
+    </main>
+    </main>
+    <footer>
+      <p>Copyright &#169; 2023 All rights reserved | This Website is made with Love by LAMQADDEM Lamyaa</p>
+    </footer>
+</body>
+</html>

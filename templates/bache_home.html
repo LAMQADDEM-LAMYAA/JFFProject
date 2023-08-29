@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculateur du bilan de La b&acircche alimentaire </title>
+    <style>
+
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.ribbon {
+    background-color: #20c997; /* Green color for the ribbon */
+    color: #fff; /* Text color for the ribbon */
+    text-align: center;
+    padding: 0.5rem;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+main {
+    padding: 2rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #555;
+}
+
+footer {
+    background-color: #333;
+    color: #000; /* Text color for the footer in black */
+    text-align: center;
+    padding: 1rem;
+}
+
+    </style>
+</head>
+<body>
+    <div class="ribbon">
+        <p>Bienvenue sur notre site</p>
+    </div>
+    <header>
+        <h1>Calculateur du bilan de La b&acircche alimentaire </h1>
+    </header>
+    <main>
+    <form action="{{ url_for('bache_home') }}" method="post">
+
+        <label>D&eacutebit massique de BP   vers d&eacutegazeur (t/h):</label>
+        <input type="number" name="QBPB"  step="0.01" required><br>
+
+        <label>Temp&eacuterature de BP vers d&eacutegazeur  (&deg;C):</label>
+        <input type="number" name="TBPB" step="0.01" required><br>
+
+        <label>Pression BP vers d&eacutegazeur  (bar):</label>
+        <input type="number" name="PBPB" step="0.01" required><br>
+
+        <label>D&eacutebit massique d'eau de  polissage (t/h):</label>
+        <input type="number" name="Qpolissage" step="0.01"  required><br>
+
+        <label>Temp&eacuterature d'eau de polissage  (&deg;C):</label>
+        <input type="number" name="Tpolissage" step="0.01" required><br>
+
+        <label>Pression d'eau de polissage  (bar):</label>
+        <input type="number" name="Ppolissage" step="0.01" required><br>
+
+        <label>D&eacutebit massique  de l'eau  alimentaire vers SAP (t/h):</label>
+        <input type="number" name="QSAP"  step="0.01" required><br>
+
+        <label>Temp&eacuterature de l'eau alimentaire vers SAP  (&deg;C):</label>
+        <input type="number" name="TSAP" step="0.01" required><br>
+
+        <label>Pression de  l'eau alimentaire  vers SAP  (bar):</label>
+        <input type="number" name="PSAP" step="0.01" required><br>
+
+        <label>D&eacutebit massique de d&eacutesurchauffe  (t/h):</label>
+        <input type="number" name="Qdésurchauffe"  step="0.01" required><br>
+
+        <label>Temp&eacuterature de d&eacutesurchauffe  (&deg;C):</label>
+        <input type="number" name="Tdésurchauffe" step="0.01" required><br>
+
+        <label>Pression BP de d&eacutesurchauffe  (bar):</label>
+        <input type="number" name="Pdésurchauffe" step="0.01" required><br>
+
+
+        <input type="submit" value="Calculate">
+      </form>
+    </main>
+    <footer>
+        <p>Copyright &#169; 2023 All rights reserved | This Website is made with Love by LAMQADDEM Lamyaa</p>
+    </footer>
+</body>
+</html>
